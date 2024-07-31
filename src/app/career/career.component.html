@@ -1,0 +1,212 @@
+<div class="main bg-gray-300 min-h-screen">
+  <div class="container mx-auto py-8">
+    <h2
+      class="text-3xl text-center font-bold mb-4 text-green-800 flex justify-center"
+    >
+      BRANCIZE is proud to be a leading organization in the Assessment Industry
+      in India.
+    </h2>
+
+    <div
+      class="bg-green-200 justify-center p-8 rounded-lg"
+      [ngStyle]="{
+        'background-image': 'url(\'assets/Brancize.png\')',
+        'background-size': 'contain',
+        'background-position': 'center',
+        'background-repeat': 'no-repeat',
+        margin: '20px',
+        padding: '20px',
+        opacity: 10
+      }"
+    >
+      <p
+        class="mb-4 text-center text-2xl text-green-800 font-bold flex justify-center"
+      >
+        Join BRANCIZE's Team: Unleash Your Potential.
+      </p>
+      <p
+        class="mb-4 text-center text-2xl text-green-800 text-bold flex justify-center"
+      >
+        <span class="blink"> Apply Now!</span>
+      </p>
+
+      <form
+        class="max-w-md mx-auto"
+        [formGroup]="form"
+        (ngSubmit)="submitForm()"
+      >
+        <div class="mb-4">
+          <label
+            class="block font-bold text-green-800 mb-1"
+            for="candidate-name"
+            >Candidate Name</label
+          >
+          <input
+            type="text"
+            id="candidate-name"
+            class="w-full p-2 border border-gray-300 rounded"
+            placeholder="Enter your name"
+            formControlName="candidateName"
+          />
+          <div
+            *ngIf="
+              form.controls['candidateName'].invalid &&
+              form.controls['candidateName'].touched
+            "
+            class="text-red-500"
+          >
+            Candidate Name is required
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="block font-bold text-green-800 mb-1" for="mobile-no"
+            >Mobile No</label
+          >
+          <input
+            type="tel"
+            id="mobile-no"
+            class="w-full p-2 border border-gray-300 rounded"
+            placeholder="Enter your mobile number"
+            formControlName="mobileNo"
+          />
+          <div
+            *ngIf="
+              form.controls['mobileNo'].invalid &&
+              form.controls['mobileNo'].touched
+            "
+            class="text-red-500"
+          >
+            Mobile No is required
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="block font-bold text-green-800 mb-1" for="email"
+            >Email id</label
+          >
+          <input
+            type="email"
+            id="email"
+            class="w-full p-2 border border-gray-300 rounded"
+            placeholder="Enter your email address"
+            formControlName="email"
+          />
+          <div
+            *ngIf="
+              form.controls['email'].invalid && form.controls['email'].touched
+            "
+            class="text-red-500"
+          >
+            <ng-container *ngIf="form.controls['email'].errors?.['required']"
+              >Email is required</ng-container
+            >
+            <ng-container *ngIf="form.controls['email'].errors?.['email']"
+              >Invalid email format</ng-container
+            >
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="block font-bold text-green-800 mb-1" for="post-applied"
+            >Post Applied for</label
+          >
+          <input
+            type="text"
+            id="post-applied"
+            class="w-full p-2 border border-gray-300 rounded"
+            placeholder="Enter the position you are applying for"
+            formControlName="postApplied"
+          />
+          <div
+            *ngIf="
+              form.controls['postApplied'].invalid &&
+              form.controls['postApplied'].touched
+            "
+            class="text-red-500"
+          >
+            Post Applied for is required
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-green-800 font-bold mb-1" for="resume"
+            >Please Upload your resume/cv</label
+          >
+          <input
+            type="file"
+            id="pdf"
+            class="w-full p-2 border border-gray-300 rounded"
+            accept=".pdf"
+            (change)="handleFileInput($event)"
+            [formControlName]="'pdf'"
+          />
+          <div
+            *ngIf="form.controls['pdf'].invalid && form.controls['pdf'].touched"
+            class="text-red-500"
+          >
+            Resume is required
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-green-800 font-bold mb-1" for="message"
+            >Message</label
+          >
+          <textarea
+            id="message"
+            class="w-full p-2 border border-gray-300 rounded"
+            rows="4"
+            placeholder="Enter your message or cover letter"
+            formControlName="message"
+          ></textarea>
+          <div
+            *ngIf="
+              form.controls['message'].invalid &&
+              form.controls['message'].touched
+            "
+            class="text-red-500"
+          >
+            Message is required
+          </div>
+        </div>
+
+        <div *ngIf="isSubmitted" class="mb-4 flex justify-center items-center">
+          <svg
+            class="w-16 h-16 text-green-500"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <p class="text-green-800 text-xl font-bold ml-2">
+            Thanks for applying! We will contact you shortly.
+          </p>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="form.invalid"
+          class="bg-green-800 hover:bg-green-900 text-white font-medium px-4 py-2 rounded"
+        >
+          Submit
+        </button>
+      </form>
+      <div></div>
+    </div>
+  </div>
+  <div class="text-center bg-green-600 mt-8 py-4">
+    <p class="text-white text-sm lg:text-base px-4 lg:px-8">
+      At our company, we are dedicated to providing exceptional support and
+      customer service. We prioritize data security and privacy, ensuring
+      compliance with relevant regulations. Contact us today for a demo or to
+      learn more about our solutions.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+
+<div class="relative main bg-gray-300 min-w-fit">
+  <h2
+    class="text-6xl color text-center text font-bold ml-0 pt-6"
+  >
+     Certificates Earned By Us
+  </h2>
+  <div class="lg:flex lg:flex-col md:flex-col md:flex m-5 sm:flex sm:flex-col">
+    <div class="text-center px-5 py-4 text-xl">
+      Let's take a look at a few of many certificates that proves our mettle and
+      marks our excellence.
+    </div>
+    <!-- <div class="flex justify-around items-center flex-wrap gap-5 mt-20">
+      <img
+        class="w-[30rem] h-[25rem]"
+        src="../../assets/CERTIFICATE1.jpg"
+        alt=""
+      />
+      <img class="w-[30rem] h-[25rem]" src="assets/CERTIFICATE2.jpg" alt="" />
+      <img class="w-[30rem] h-[25rem]" src="assets/CERTIFICATE3.jpg" alt="" />
+      <img class="w-[30rem] h-[25rem] " src="../../assets/CERTIFICATE3.jpg" alt="">
+    </div> -->
+    <div class="relative w-full max-w-2xl mx-auto">
+      <div class="overflow-hidden rounded-lg">
+        <div
+          class="flex transition-transform duration-700"
+          [ngStyle]="{ transform: 'translateX(' + -currentSlide * 100 + '%)' }"
+        >
+          <div *ngFor="let slide of slides" class="flex-none w-full p-2">
+            <img
+              [src]="slide.image"
+              class="w-full h-auto max-h-64 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 flex items-center justify-between p-4">
+        <button
+          (click)="prevSlide()"
+          class="bg-green-500 text-white p-2 rounded-full focus:outline-none"
+        >
+          &#9664;
+        </button>
+        <button
+          (click)="nextSlide()"
+          class="bg-green-500 text-white p-2 rounded-full focus:outline-none"
+        >
+          &#9654;
+        </button>
+      </div>
+      <div
+        class="absolute bottom-0 left-0 right-0 flex justify-center p-2 space-x-2"
+      >
+        <div
+          *ngFor="let slide of slides; let i = index"
+          (click)="goToSlide(i)"
+          class="w-2 h-2 bg-gray-800 rounded-full cursor-pointer"
+          [ngClass]="{ 'bg-white': i === currentSlide }"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center bg-green-600 mt-8 py-4 w-full">
+    <p class="text-white text-sm lg:text-base px-4 lg:px-8">
+      At our company, we are dedicated to providing exceptional support and
+      customer service. We prioritize data security and privacy, ensuring
+      compliance with relevant regulations. Contact us today for a demo or to
+      learn more about our solutions.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,626 @@
+<div class="sticky top-0 z-50 md:z-900">
+  <div class="bg-green-500">
+    <div
+      class="flex flex-col items-center justify-center text-white py-2 px-4 md:px-48 md:flex-row"
+    >
+      <div
+        class="w-full md:w-1/2 flex items-center justify-center md:justify-start"
+      >
+        <h3 class="text-center md:text-left" href="tel:7668600000">
+          Contact us: info&#64;brancize.com
+        </h3>
+      </div>
+      <div
+        class="w-full md:w-1/2 flex items-center justify-center md:justify-end mt-2 md:mt-0"
+      >
+        <h3 class="text-center md:text-right">Follow us on:</h3>
+        <div class="flex ml-2">
+          <a
+            class="px-2"
+            href="https://www.instagram.com/brancizetechnology"
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            class="px-2"
+            href="https://www.facebook.com/BrancizeTech"
+            target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            class="px-2"
+            href="https://www.twitter.com/brancizetech"
+            target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="px-2"
+            href="https://www.linkedin.com/company/brancize-technology-pvt-ltd/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-between w-full">
+    <div class="md:flex lg:flex w-full bg-white items-start">
+      <img
+        src="assets/Brancize-logo-horizontal.png"
+        alt="Logo"
+        class="h-20 ml-5"
+      />
+    </div>
+    <nav class="px-4 py-4 bg-white text-green-900 font-bold shadow-md">
+      <!-- Mobile Hamburger Menu -->
+      <div class="flex justify-between items-center md:hidden">
+        <button
+          class="text-green-900 hover:text-green-700 focus:outline-none"
+          (click)="toggleMobileMenu()"
+        >
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="hidden md:flex justify-center text-lg">
+        <li
+          class="mx-6 cursor-pointer hover:font-semibold"
+          [class.active]="isActive('/content')"
+          routerLinkActive="active"
+        >
+          <a routerLink="/content">HOME</a>
+        </li>
+        <!-- <li
+          class="mx-6 cursor-pointer hover:font-semibold"
+          [class.active]="isActive('/about')"
+          routerLinkActive="active"
+        >
+          <a routerLink="/about">ABOUT</a>
+        </li> -->
+        <li class="mx-6 cursor-pointer hover:font-semibold">
+          <div class="relative text-center group">
+            <div>
+              <button
+                class="inline-flex justify-center w-full rounded-md text-lg font-sm text-green-900"
+                id="menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                ABOUT
+                <svg
+                  class="w-2.5 h-2.5 ms-3 mt-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="origin-top-right absolute mt-0 w-[16rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1" role="none">
+                <a
+                  routerLink="/about"
+                  class="text-gren-900 block px-4 py-2 text-medium"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  >About Us</a
+                >
+                <a
+                  routerLink="/certificate"
+                  class="text-gren-900 block px-4 py-2 text-medium"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-1"
+                  >Our Certificates</a
+                >
+              </div>
+            </div>
+          </div>
+                
+        </li>
+
+        <li class="mx-6 cursor-pointer hover:font-semibold">
+          <div class="relative text-center group">
+            <div>
+              <button
+                class="inline-flex justify-center w-full rounded-md text-lg font-sm text-green-900"
+                id="menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                EXAMS
+                <svg
+                  class="w-2.5 h-2.5 ms-3 mt-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="origin-top-right absolute mt-0 w-auto rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1 flex justify-between" role="none">
+                <div class="w-40">
+                  <button
+                    class="font-bold rounded-md text-xl font-sm my-3 text-black"
+                    id="menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    Exam Structure
+                  </button>
+                  <a
+                    routerLink="/onlineexam"
+                    class="text-gren-900 block px-4 py-2 text-medium"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-0"
+                    >Online Exam</a
+                  >
+                  <a
+                    routerLink="/offlineexam"
+                    class="text-gren-900 block px-4 py-2 text-medium"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-1"
+                    >Offline Exam</a
+                  >
+                  <a
+                    routerLink="/typingtest"
+                    class="text-gren-900 block px-4 py-2 text-medium"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-1"
+                    >Typing Test</a
+                  >
+                  <a
+                    routerLink="/coding"
+                    class="text-gren-900 block px-4 py-2 text-medium"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-1"
+                    >Coding Test</a
+                  >
+                  <a
+                    routerLink="/processflow"
+                    class="text-gren-900 block px-4 py-2 text-medium"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-1"
+                    >Exam Process Flow</a
+                  >
+                </div>
+                <div class="w-40">
+                  <button
+                    class="font-bold rounded-md text-xl my-3 font-sm text-black"
+                    id="menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    Biometric
+                  </button>
+                  <a
+                    routerLink="/thumb"
+                    class="text-gren-900 block px-4 py-2 text-medium"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-1"
+                    >Thumb Based</a
+                  >
+                  <a
+                    routerLink="/facial"
+                    class="text-gren-900 block px-4 py-2 text-medium"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-1"
+                    >Facial</a
+                  >
+                  <a
+                    routerLink="/iris"
+                    class="text-gren-900 block px-4 py-2 text-medium"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-1"
+                    >IRIS</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+                
+        </li>
+
+        <li class="mx-6 cursor-pointer hover:font-semibold">
+          <div class="relative text-center group">
+            <div>
+              <button
+                class="inline-flex justify-center w-full rounded-md text-lg font-sm text-green-900"
+                id="menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                SERVICES
+                <svg
+                  class="w-2.5 h-2.5 ms-3 mt-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="origin-top-right absolute mt-0 w-[16rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1" role="none">
+                <a
+                  routerLink="/onscreen"
+                  class="text-gren-900 block px-4 py-2 text-medium"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  >On Screen Marking</a
+                >
+                <a
+                  routerLink="/venue"
+                  class="text-gren-900 block px-4 py-2 text-medium"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-1"
+                  >Venue Management System</a
+                >
+                <a
+                  routerLink="/cctv"
+                  class="text-gren-900 block px-4 py-2 text-medium"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-1"
+                  >CCTV Surveillance</a
+                >
+              </div>
+            </div>
+          </div>
+                
+        </li>
+
+        <!-- <li class="mx-6 cursor-pointer hover:font-semibold" [class.active]="isActive('/service')"
+          routerLinkActive="active">
+          <a routerLink="/service">SERVICES</a>
+        </li> -->
+        <!-- <li
+          class="mx-6 cursor-pointer hover:font-semibold"
+          [class.active]="isActive('/career')"
+          routerLinkActive="active"
+        >
+          <a routerLink="/career">CAREER</a>
+        </li> -->
+        <!-- <li class="mx-6 cursor-pointer hover:font-semibold" [class.active]="isActive('/career')"
+          routerLinkActive="active">
+          <a routerLink="/certificate">CERTIFICATE</a>
+        </li> -->
+        <li
+          class="mx-6 cursor-pointer hover:font-semibold"
+          [class.active]="isActive('/contact')"
+          routerLinkActive="active"
+        >
+          <a routerLink="/contact">CONTACT</a>
+        </li>
+      </ul>
+
+      <!-- Mobile Navigation Menu (Hidden by default) -->
+      <ul *ngIf="!mobileMenuOpen">
+        <li class="px-4 py-2">
+          <a
+            routerLink="/content"
+            [class.activeMob]="isActive('/content')"
+            routerLinkActive="activeMob"
+            (click)="toggleMobileMenu()"
+            class="block cursor-pointer hover:font-semibold"
+            >HOME</a
+          >
+        </li>
+        <li class="px-4 py-2">
+          <a
+            routerLink="/about"
+            [class.activeMob]="isActive('/about')"
+            routerLinkActive="activeMob"
+            (click)="toggleMobileMenu()"
+            class="block cursor-pointer hover:font-semibold"
+            >ABOUT</a
+          >
+        </li>
+        <!-- <li class="px-4 py-2">
+          <a routerLink="/solution"  [class.activeMob]="isActive('/solution')"
+          routerLinkActive="activeMob" (click)="toggleMobileMenu()" class="block cursor-pointer hover:font-semibold">SOLUTIONS</a>
+        </li> -->
+        <!-- <li class="px-4 py-2">
+          <a routerLink="/offlineexam" [class.activeMob]="isActive('/offlineexam')" routerLinkActive="activeMob"
+            (click)="toggleMobileMenu()" class="block cursor-pointer hover:font-semibold">EXAM</a>
+        </li> -->
+
+        <li class="mx-[17px] cursor-pointer hover:font-semibold">
+          <div class="relative text-center group">
+            <div>
+              <button
+                class="flex justify-center rounded-md text-[16px] font-sm text-green-900"
+                id="menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                EXAMS
+                <svg
+                  class="w-2.5 h-2.5 ms-3 mt-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="origin-top-right absolute mt-0 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1" role="none">
+                <div class="flex flex-col">
+                  <div>
+                    <button
+                      class="font-bold rounded-md text-xl my-3 font-sm text-black"
+                      id="menu-button"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                    >
+                      Exam Infra
+                    </button>
+
+                    <a
+                      routerLink="/onlineexam"
+                      class="text-gren-900 block px-4 py-2 text-medium"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-0"
+                      (click)="toggleMobileMenu()"
+                      >Online Exam</a
+                    >
+                    <a
+                      routerLink="/offlineexam"
+                      class="text-gren-900 block px-4 py-2 text-medium"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                      (click)="toggleMobileMenu()"
+                      >Offline Exam</a
+                    >
+                    <a
+                      routerLink="/typingtest"
+                      class="text-gren-900 block px-4 py-2 text-medium"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                      (click)="toggleMobileMenu()"
+                      >Typing Test</a
+                    >
+                    <a
+                      routerLink="/coding"
+                      class="text-gren-900 block px-4 py-2 text-medium"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                      (click)="toggleMobileMenu()"
+                      >Coding Test</a
+                    >
+                    <a
+                      routerLink="/processflow"
+                      class="text-gren-900 block px-4 py-2 text-medium"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                      (click)="toggleMobileMenu()"
+                      >Process Flow</a
+                    >
+                  </div>
+                  <div>
+                    <button
+                      class="font-bold rounded-md text-xl my-3 font-sm text-black"
+                      id="menu-button"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                    >
+                      Biometric
+                    </button>
+                    <a
+                      routerLink="/thumb"
+                      class="text-gren-900 block px-4 py-2 text-medium"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                      (click)="toggleMobileMenu()"
+                      >Thumb Base</a
+                    >
+                    <a
+                      routerLink="/facial"
+                      class="text-gren-900 block px-4 py-2 text-medium"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                      (click)="toggleMobileMenu()"
+                      >Facial</a
+                    >
+                    <a
+                      routerLink="/iris"
+                      class="text-gren-900 block px-4 py-2 text-medium"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                      (click)="toggleMobileMenu()"
+                      >IRIS</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                
+        </li>
+
+        <li class="mx-[17px] cursor-pointer hover:font-semibold">
+          <div class="relative text-center group">
+            <div>
+              <button
+                class="flex justify-center rounded-md text-[16px] font-sm text-green-900"
+                id="menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                SERVICES
+                <svg
+                  class="w-2.5 h-2.5 ms-3 mt-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="origin-top-right absolute mt-0 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1" role="none">
+                <a
+                  routerLink="/onscreen"
+                  class="text-gren-900 block px-4 py-2 text-medium"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  (click)="toggleMobileMenu()"
+                  >On Screen Making</a
+                >
+                <a
+                  routerLink="/venue"
+                  class="text-gren-900 block px-4 py-2 text-medium"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-1"
+                  (click)="toggleMobileMenu()"
+                  >VMS</a
+                >
+                <a
+                  routerLink="/cctv"
+                  class="text-gren-900 block px-4 py-2 text-medium"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-1"
+                  (click)="toggleMobileMenu()"
+                  >Cctv Surveillance</a
+                >
+              </div>
+            </div>
+          </div>
+                
+        </li>
+
+        <!-- <li class="px-4 py-2">
+          <a routerLink="/service" [class.activeMob]="isActive('/service')" routerLinkActive="activeMob"
+            (click)="toggleMobileMenu()" class="block cursor-pointer hover:font-semibold">SERVICES</a>
+        </li> -->
+
+        <li class="px-4 py-2">
+          <a
+            routerLink="/career"
+            [class.activeMob]="isActive('/career')"
+            routerLinkActive="activeMob"
+            (click)="toggleMobileMenu()"
+            class="block cursor-pointer hover:font-semibold"
+            >CAREER</a
+          >
+        </li>
+
+        <!-- <li class="px-4 py-2">
+          <a routerLink="/service" [class.activeMob]="isActive('/service')" routerLinkActive="activeMob"
+            (click)="toggleMobileMenu()" class="block cursor-pointer hover:font-semibold">CERTIFICATE</a>
+        </li> -->
+        <li class="px-4 py-2">
+          <a
+            routerLink="/contact"
+            [class.activeMob]="isActive('/contact')"
+            routerLinkActive="activeMob"
+            (click)="toggleMobileMenu()"
+            class="block cursor-pointer hover:font-semibold"
+            >CONTACT</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

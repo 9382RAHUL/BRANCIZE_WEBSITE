@@ -1,0 +1,354 @@
+<footer class="bg-green-700 text-white p-4">
+  <div
+    class="container mx-auto flex flex-col md:flex-row items-center justify-between"
+  >
+    <p class="md:mr-auto">
+      &copy; {{ getCurrentYear() }} Brancize. All rights reserved.
+    </p>
+    <ul class="flex space-x-4 cursor-pointer">
+      <li><a (click)="toggleModal()">Terms and conditions</a></li>
+      <li><a (click)="toggleModalprivacy()">Privacy Policy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div
+  *ngIf="showModal"
+  class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+>
+  <div class="relative w-auto my-6 mx-auto max-w-6xl">
+    <!--content-->
+    <div
+      class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+    >
+      <!--header-->
+      <div
+        class="flex flex-col items-center justify-between p-5 border-b border-solid border-slate-200 rounded-t"
+      >
+        <h3 class="text-5xl text-slate-500 font-semibold">
+          Terms and conditions
+        </h3>
+        <button
+          class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+          (click)="toggleModal()"
+        >
+          <span
+            class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+
+      <!--body-->
+      <div class="relative p-6 flex-auto max-h-96 overflow-y-auto">
+        <p class="my-4 text-slate-500 text-sm leading-relaxed">
+          Please read these Terms and Conditions ("Terms") carefully before
+          using our services provided by Brancize. These Terms govern your use
+          of our website, applications, and any related services we offer. By
+          accessing or using our services, you agree to be bound by these Terms.
+          If you do not agree with any part of these Terms, you may not use our
+          services.
+        </p>
+
+        <ol class="list-decimal ml-6 my-4 text-slate-500 text-sm">
+          <li class="mb-2">
+            <strong>Use of Services</strong>
+            <ol class="list-decimal ml-6 mt-2">
+              <li class="mb-2">
+                <strong>Eligibility:</strong> By using our services, you
+                represent and warrant that you are at least 18 years old or have
+                the necessary legal capacity to enter into a binding agreement.
+              </li>
+              <li class="mb-2">
+                <strong>User Account:</strong> You may need to create a user
+                account to access certain features of our services. You are
+                responsible for maintaining the confidentiality of your account
+                credentials and are solely responsible for any activities that
+                occur under your account.
+              </li>
+              <li class="mb-2">
+                <strong>User Conduct:</strong> You agree to use our services in
+                compliance with all applicable laws, regulations, and these
+                Terms. You must not engage in any activities that may disrupt or
+                interfere with the proper functioning of our services or
+                infringe upon the rights of others.
+              </li>
+            </ol>
+          </li>
+          <li class="mb-2">
+            <strong>Intellectual Property Rights</strong>
+            <ol class="list-decimal ml-6 mt-2">
+              <li class="mb-2">
+                <strong>Ownership:</strong> All content and materials provided
+                through our services, including but not limited to text,
+                graphics, logos, images, and software, are owned or licensed by
+                Brancize and are protected by intellectual property laws. You
+                agree not to modify, reproduce, distribute, or create derivative
+                works based on our content without our prior written consent.
+              </li>
+              <li class="mb-2">
+                <strong>Trademarks:</strong> The Brancize name, logo, and any
+                other trademarks or service marks used in connection with our
+                services are the property of Brancize. You are prohibited from
+                using any of these trademarks without our express written
+                permission.
+              </li>
+            </ol>
+          </li>
+          <li class="mb-2">
+            <strong>Limitation of Liability</strong>
+            <ol class="list-decimal ml-6 mt-2">
+              <li class="mb-2">
+                <strong>Disclaimer of Warranties:</strong> Our services are
+                provided on an "as is" and "as available" basis, without any
+                warranties or representations, express or implied. We do not
+                guarantee that our services will be uninterrupted, error-free,
+                or free from harmful components. You use our services at your
+                own risk.
+              </li>
+              <li class="mb-2">
+                <strong>Limitation of Liability:</strong> To the maximum extent
+                permitted by law, Brancize and its affiliates, officers,
+                directors, employees, and agents shall not be liable for any
+                indirect, incidental, consequential, or punitive damages arising
+                out of or in connection with the use or inability to use our
+                services.
+              </li>
+            </ol>
+          </li>
+          <li class="mb-2">
+            <strong>Governing Law and Dispute Resolution</strong>
+            <ol class="list-decimal ml-6 mt-2">
+              <li class="mb-2">
+                <strong>Governing Law:</strong> These Terms shall be governed by
+                and construed in accordance with the laws of [insert
+                jurisdiction]. Any disputes arising out of or in connection with
+                these Terms shall be subject to the exclusive jurisdiction of
+                the courts of [insert jurisdiction].
+              </li>
+            </ol>
+          </li>
+          <li class="mb-2">
+            <strong>Modifications and Termination</strong>
+            <ol class="list-decimal ml-6 mt-2">
+              <li class="mb-2">
+                <strong>Modifications:</strong> We reserve the right to modify
+                or update these Terms at any time without prior notice. The
+                updated Terms will be effective immediately upon posting on our
+                website. By continuing to use our services after the revised
+                Terms are posted, you agree to be bound by the updated Terms.
+              </li>
+              <li class="mb-2">
+                <strong>Termination:</strong> We may terminate or suspend your
+                access to our services, in whole or in part, at our sole
+                discretion, without prior notice or liability.
+              </li>
+            </ol>
+          </li>
+          <li class="mb-2">
+            <strong>Severability</strong>
+            <p class="ml-6">
+              If any provision of these Terms is found to be invalid, illegal,
+              or unenforceable, the remaining provisions shall continue in full
+              force and effect.
+            </p>
+          </li>
+          <li class="mb-2">
+            <strong>Entire Agreement</strong>
+            <p class="ml-6">
+              These Terms constitute the entire agreement between you and
+              Brancize regarding the use of our services, superseding any prior
+              agreements or understandings.
+            </p>
+          </li>
+        </ol>
+        <strong class="text-slate-500">Contact Us</strong>
+        <p class="ml-6 text-xs text-slate-500">
+          If you have any questions, concerns, or feedback regarding these
+          Terms, please contact us at:<br />
+          If you have any questions, concerns, or requests regarding this
+          Privacy Policy or our privacy practices,
+          <br />
+          please contact us at: Office No.204-25,Mahaavir Icon,B-wing,Plot no.89
+          & 90,Sector 15,CBD Belapur,Navi Mumbai - 400614 Email:
+          info&#64;brancize.com<br />
+          Email: info&#64;brancize.com
+        </p>
+      </div>
+      <!--footer-->
+      <div
+        class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+      >
+        <button
+          class="text-green-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          (click)="toggleModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="showModalprivacy"
+  class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+>
+  <div class="relative w-auto my-6 mx-auto max-w-6xl">
+    <!--content-->
+    <div
+      class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+    >
+      <!--header-->
+      <div
+        class="flex flex-col items-center justify-between p-5 border-b border-solid border-slate-200 rounded-t"
+      >
+        <h3 class="text-4xl text-slate-500 font-semibold">Privacy Policy</h3>
+        <button
+          class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+          (click)="toggleModalprivacy()"
+        >
+          <span
+            class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+
+      <!--body-->
+      <div class="relative p-6 flex-auto max-h-96 overflow-y-auto">
+        <p class="my-4 text-slate-500 text-sm leading-relaxed">
+          At Brancize, we take the privacy and security of our users'
+          information seriously. This Privacy Policy outlines how we collect,
+          use, and protect your personal data when you interact with our
+          services. Please read this policy carefully to understand our
+          practices regarding your personal information.
+        </p>
+        <ol class="list-decimal ml-6 my-4 text-slate-500 text-sm">
+          <li class="mb-4">
+            <strong>Information We Collect</strong>
+            <p class="ml-6">
+              1.1 Personal Information: When you engage with our services, we
+              may collect personal information such as your name, email address,
+              contact number, and any other information you provide to us
+              voluntarily.
+            </p>
+            <p class="ml-6">
+              1.2 Usage Data: We may collect non-personal information about how
+              you interact with our website, applications, and services. This
+              may include IP addresses, browser type, device information, and
+              usage statistics. We use this data to improve the functionality
+              and performance of our services.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Use of Collected Information</strong>
+            <p class="ml-6">
+              2.1 Providing Services: We use the information we collect to
+              deliver the services you have requested from us, such as
+              processing examination orders, managing user accounts, and
+              providing customer support.
+            </p>
+            <p class="ml-6">
+              2.2 Communication: We may use your contact information to
+              communicate with you regarding important updates, service
+              notifications, and promotional materials related to our offerings.
+              You have the option to opt out of receiving promotional
+              communications.
+            </p>
+            <p class="ml-6">
+              2.3 Analytics and Improvements: We analyze the usage data to
+              understand user behavior and preferences, enhance our services,
+              and improve user experience. This may include the use of cookies
+              or similar technologies.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Data Sharing and Disclosure</strong>
+            <p class="ml-6">
+              3.1 Third-Party Service Providers: We may engage trusted
+              third-party service providers to perform certain functions on our
+              behalf, such as payment processing or data storage. These
+              providers have access to personal information only as required to
+              perform their services and are obligated to maintain the
+              confidentiality of your data.
+            </p>
+            <p class="ml-6">
+              3.2 Legal Compliance: We may disclose your personal information if
+              required by law, regulation, or legal process, or to protect our
+              rights, property, or safety, as well as the rights, property, and
+              safety of our users or others.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Data Security</strong>
+            <p class="ml-6">
+              We take appropriate technical and organizational measures to
+              safeguard the personal information we collect. We use
+              industry-standard security practices to protect against
+              unauthorized access, alteration, disclosure, or destruction of
+              your data. However, please note that no method of transmission
+              over the internet or electronic storage is completely secure, and
+              we cannot guarantee absolute security.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Data Retention</strong>
+            <p class="ml-6">
+              We retain your personal information for as long as necessary to
+              fulfill the purposes outlined in this Privacy Policy, unless a
+              longer retention period is required or permitted by law.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Your Rights</strong>
+            <p class="ml-6">
+              You have certain rights regarding your personal information,
+              including the right to access, update, or delete the information
+              we hold about you. To exercise these rights, please contact us
+              using the information provided in the "Contact Us" section below.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Changes to this Privacy Policy</strong>
+            <p class="ml-6">
+              We may update this Privacy Policy from time to time. We will
+              notify you of any material changes by posting the updated policy
+              on our website or through other communication channels. We
+              encourage you to review this policy periodically to stay informed
+              about how we collect, use, and protect your information.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Contact Us</strong>
+            <p class="ml-6">
+              If you have any questions, concerns, or requests regarding this
+              Privacy Policy or our privacy practices,
+              <br />
+              please contact us at:
+              <br />
+              Office No.204-25,Mahaavir Icon,B-wing,Plot no.89 & 90,Sector
+              15,CBD Belapur,Navi Mumbai - 400614
+              <br />Email: info&#64;brancize.com
+            </p>
+          </li>
+        </ol>
+      </div>
+      <!--footer-->
+      <div
+        class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+      >
+        <button
+          class="text-green-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          (click)="toggleModalprivacy()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

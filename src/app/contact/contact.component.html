@@ -1,0 +1,503 @@
+<div class="main flex justify-center bg-gray-300 min-h-screen">
+  <div>
+    <div class="container mx-auto py-8">
+      <h1
+        class="text-3xl text-center font-bold mb-4 text-green-800 flex justify-center"
+      >
+        Get in touch - We would love to hear from you
+      </h1>
+
+      <div
+        class="bg-green-200 p-8 rounded-lg"
+        [ngStyle]="{
+          'background-image': 'url(\'assets/Brancize.png\')',
+          'background-size': 'contain',
+          'background-position': 'center',
+          'background-repeat': 'no-repeat',
+          margin: '20px',
+          padding: '20px'
+        }"
+      >
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="mb-4">
+            <label class="block font-bold text-green-800">Name</label>
+            <input
+              formControlName="name"
+              placeholder="Enter your name"
+              type="text"
+              class="w-full border border-gray-300 rounded-md py-2 px-4"
+            />
+            <div
+              *ngIf="
+                contactForm.controls['name'].invalid &&
+                (contactForm.controls['name'].dirty ||
+                  contactForm.controls['name'].touched)
+              "
+              class="text-red-500 mt-2"
+            >
+              Name is required
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block font-bold text-green-800"
+              >Organisation Name</label
+            >
+            <input
+              formControlName="organizationName"
+              placeholder="Enter your Organisation Name"
+              type="text"
+              class="w-full border border-gray-300 rounded-md py-2 px-4"
+            />
+            <div
+              *ngIf="
+                contactForm.controls['organizationName'].invalid &&
+                (contactForm.controls['organizationName'].dirty ||
+                  contactForm.controls['organizationName'].touched)
+              "
+              class="text-red-500 mt-2"
+            >
+              Organization Name is required
+            </div>
+          </div>
+          <div class="flex">
+            <div class="w-1/2 mr-4">
+              <div class="mb-4">
+                <label class="block font-bold text-green-800">Email</label>
+                <input
+                  formControlName="email"
+                  placeholder="Enter your Email"
+                  type="email"
+                  class="w-full border border-gray-300 rounded-md py-2 px-4"
+                />
+                <div
+                  *ngIf="
+                    contactForm.controls['email'].invalid &&
+                    (contactForm.controls['email'].dirty ||
+                      contactForm.controls['email'].touched)
+                  "
+                  class="text-red-500 mt-2"
+                >
+                  Email is required and must be a valid email address
+                </div>
+              </div>
+            </div>
+            <div class="w-1/2">
+              <div class="mb-4">
+                <label class="block font-bold text-green-800">Phone</label>
+                <input
+                  formControlName="phone"
+                  placeholder="Enter your phone number"
+                  type="text"
+                  class="w-full border border-gray-300 rounded-md py-2 px-4"
+                />
+                <div
+                  *ngIf="
+                    contactForm.controls['phone'].invalid &&
+                    (contactForm.controls['phone'].dirty ||
+                      contactForm.controls['phone'].touched)
+                  "
+                  class="text-red-500 mt-2"
+                >
+                  Phone number is required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="block font-bold text-green-800">Address</label>
+            <input
+              formControlName="address"
+              placeholder="Enter your Address"
+              type="text"
+              class="w-full border border-gray-300 rounded-md py-2 px-4"
+            />
+            <div
+              *ngIf="
+                contactForm.controls['address'].invalid &&
+                (contactForm.controls['address'].dirty ||
+                  contactForm.controls['address'].touched)
+              "
+              class="text-red-500 mt-2"
+            >
+              Address is required
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block font-bold text-green-800">Solution</label>
+            <select
+              formControlName="solution"
+              class="w-full border border-gray-300 rounded-md py-2 px-4"
+            >
+              <option value="" disabled>
+                Please select the solution you want
+              </option>
+              <option value="Computer Based Test">Computer Based Test</option>
+              <option value="Application Processing">
+                Application Processing
+              </option>
+              <option value="OMR Sheets Processing">
+                OMR Sheets Processing
+              </option>
+              <option value="Customized testing portal">
+                Customized testing portal
+              </option>
+              <option value="Advance OMR Application">
+                Advance OMR Application
+              </option>
+              <option value="Recruitment Test">Recruitment Test</option>
+              <option value="Employee Assessment">Employee Assessment</option>
+              <option value="Test Labs">Test Labs</option>
+            </select>
+            <div
+              *ngIf="
+                contactForm.controls['solution'].invalid &&
+                (contactForm.controls['solution'].dirty ||
+                  contactForm.controls['solution'].touched)
+              "
+              class="text-red-500 mt-2"
+            >
+              Solution is required
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block font-bold text-green-800">Message</label>
+            <textarea
+              formControlName="message"
+              placeholder="Enter your message for us"
+              class="w-full border border-gray-300 rounded-md py-2 px-4"
+            ></textarea>
+            <div
+              *ngIf="
+                contactForm.controls['message'].invalid &&
+                (contactForm.controls['message'].dirty ||
+                  contactForm.controls['message'].touched)
+              "
+              class="text-red-500 mt-2"
+            >
+              Message is required
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="mb-4">
+              <label class="block font-bold text-green-800">Country</label>
+              <select
+                id="country"
+                formControlName="country"
+                placeholder="Please select your Country"
+                type="text"
+                class="w-full border border-gray-300 rounded-md py-2 px-4"
+                (change)="onCountryChange()"
+              >
+                <option value="">Select a country</option>
+                <option
+                  *ngFor="let country of countries"
+                  [value]="country.isoCode"
+                >
+                  {{ country.name }}
+                </option>
+              </select>
+              <div
+                *ngIf="
+                  contactForm.controls['country'].invalid &&
+                  (contactForm.controls['country'].dirty ||
+                    contactForm.controls['country'].touched)
+                "
+                class="text-red-500 mt-2"
+              >
+                Country is required
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="block font-bold text-green-800">State</label>
+              <select
+                id="state"
+                placeholder="Please select your State"
+                type="text"
+                class="w-full border border-gray-300 rounded-md py-2 px-4"
+                formControlName="state"
+                (change)="onStateChange()"
+                [disabled]="!contactForm.get('country')?.value"
+              >
+                <option value="">Select a state</option>
+                <option *ngFor="let state of states" [value]="state.isoCode">
+                  {{ state.name }}
+                </option>
+              </select>
+              <div
+                *ngIf="
+                  contactForm.controls['state'].invalid &&
+                  (contactForm.controls['state'].dirty ||
+                    contactForm.controls['state'].touched)
+                "
+                class="text-red-500 mt-2"
+              >
+                State is required
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="block font-bold text-green-800">City</label>
+              <select
+                id="city"
+                formControlName="city"
+                placeholder="Please select your city"
+                type="text"
+                class="w-full border border-gray-300 rounded-md py-2 px-4"
+                [disabled]="!contactForm.get('state')?.value"
+              >
+                <option value="">Select a city</option>
+                <option *ngFor="let city of cities" [value]="city.name">
+                  {{ city.name }}
+                </option>
+              </select>
+              <div
+                *ngIf="
+                  contactForm.controls['city'].invalid &&
+                  (contactForm.controls['city'].dirty ||
+                    contactForm.controls['city'].touched)
+                "
+                class="text-red-500 mt-2"
+              >
+                City is required
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4 flex items-center">
+            <input
+              formControlName="privacyPolicy"
+              type="checkbox"
+              id="privacyPolicy"
+              class="mr-2"
+            />
+            <label for="privacyPolicy">
+              I accept the
+              <a
+                (click)="toggleModalprivacy()"
+                class="cursor-pointer text-blue-500"
+                >Privacy Policy</a
+              >
+              <br />
+            </label>
+          </div>
+
+          <div
+            class="mb-4 flex items-center"
+            *ngIf="
+              contactForm.controls['privacyPolicy'].invalid &&
+              (contactForm.controls['privacyPolicy'].dirty ||
+                contactForm.controls['privacyPolicy'].touched)
+            "
+            class="text-red-500 mt-2"
+          >
+            You must accept the Privacy Policy
+          </div>
+
+          <br />
+
+          <div
+            *ngIf="isSubmitted"
+            class="mb-4 flex justify-center items-center"
+          >
+            <svg
+              class="w-16 h-16 text-green-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <p class="text-green-800 text-xl font-bold ml-2">
+              Thanks for applying! We will contact you shortly.
+            </p>
+          </div>
+
+          <button
+            type="submit"
+            [disabled]="contactForm.invalid"
+            class="bg-green-800 hover:bg-green-900 text-white font-medium py-2 px-4 rounded-md"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center bg-green-600 py-4">
+  <p class="text-white text-sm lg:text-base px-4 lg:px-8">
+    At our company, we are dedicated to providing exceptional support and
+    customer service. We prioritize data security and privacy, ensuring
+    compliance with relevant regulations. Contact us today for a demo or to
+    learn more about our solutions.
+  </p>
+</div>
+
+<div
+  *ngIf="showModalprivacy"
+  class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+>
+  <div class="relative w-auto my-6 mx-auto max-w-6xl">
+    <!--content-->
+    <div
+      class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+    >
+      <!--header-->
+      <div
+        class="flex flex-col items-center justify-between p-5 border-b border-solid border-slate-200 rounded-t"
+      >
+        <h3 class="text-4xl text-slate-500 font-semibold">Privacy Policy</h3>
+        <button
+          class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+          (click)="toggleModalprivacy()"
+        >
+          <span
+            class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+
+      <!--body-->
+      <div class="relative p-6 flex-auto max-h-96 overflow-y-auto">
+        <p class="my-4 text-slate-500 text-sm leading-relaxed">
+          At Brancize, we take the privacy and security of our users'
+          information seriously. This Privacy Policy outlines how we collect,
+          use, and protect your personal data when you interact with our
+          services. Please read this policy carefully to understand our
+          practices regarding your personal information.
+        </p>
+        <ol class="list-decimal ml-6 my-4 text-slate-500 text-sm">
+          <li class="mb-4">
+            <strong>Information We Collect</strong>
+            <p class="ml-6">
+              1.1 Personal Information: When you engage with our services, we
+              may collect personal information such as your name, email address,
+              contact number, and any other information you provide to us
+              voluntarily.
+            </p>
+            <p class="ml-6">
+              1.2 Usage Data: We may collect non-personal information about how
+              you interact with our website, applications, and services. This
+              may include IP addresses, browser type, device information, and
+              usage statistics. We use this data to improve the functionality
+              and performance of our services.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Use of Collected Information</strong>
+            <p class="ml-6">
+              2.1 Providing Services: We use the information we collect to
+              deliver the services you have requested from us, such as
+              processing examination orders, managing user accounts, and
+              providing customer support.
+            </p>
+            <p class="ml-6">
+              2.2 Communication: We may use your contact information to
+              communicate with you regarding important updates, service
+              notifications, and promotional materials related to our offerings.
+              You have the option to opt out of receiving promotional
+              communications.
+            </p>
+            <p class="ml-6">
+              2.3 Analytics and Improvements: We analyze the usage data to
+              understand user behavior and preferences, enhance our services,
+              and improve user experience. This may include the use of cookies
+              or similar technologies.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Data Sharing and Disclosure</strong>
+            <p class="ml-6">
+              3.1 Third-Party Service Providers: We may engage trusted
+              third-party service providers to perform certain functions on our
+              behalf, such as payment processing or data storage. These
+              providers have access to personal information only as required to
+              perform their services and are obligated to maintain the
+              confidentiality of your data.
+            </p>
+            <p class="ml-6">
+              3.2 Legal Compliance: We may disclose your personal information if
+              required by law, regulation, or legal process, or to protect our
+              rights, property, or safety, as well as the rights, property, and
+              safety of our users or others.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Data Security</strong>
+            <p class="ml-6">
+              We take appropriate technical and organizational measures to
+              safeguard the personal information we collect. We use
+              industry-standard security practices to protect against
+              unauthorized access, alteration, disclosure, or destruction of
+              your data. However, please note that no method of transmission
+              over the internet or electronic storage is completely secure, and
+              we cannot guarantee absolute security.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Data Retention</strong>
+            <p class="ml-6">
+              We retain your personal information for as long as necessary to
+              fulfill the purposes outlined in this Privacy Policy, unless a
+              longer retention period is required or permitted by law.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Your Rights</strong>
+            <p class="ml-6">
+              You have certain rights regarding your personal information,
+              including the right to access, update, or delete the information
+              we hold about you. To exercise these rights, please contact us
+              using the information provided in the "Contact Us" section below.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Changes to this Privacy Policy</strong>
+            <p class="ml-6">
+              We may update this Privacy Policy from time to time. We will
+              notify you of any material changes by posting the updated policy
+              on our website or through other communication channels. We
+              encourage you to review this policy periodically to stay informed
+              about how we collect, use, and protect your information.
+            </p>
+          </li>
+          <li class="mb-4">
+            <strong>Contact Us</strong>
+            <p class="ml-6">
+              If you have any questions, concerns, or requests regarding this
+              Privacy Policy or our privacy practices,
+              <br />
+              please contact us at:
+              <br />
+              Office No.204-25,Mahaavir Icon,B-wing,Plot no.89 & 90,Sector
+              15,CBD Belapur,Navi Mumbai - 400614
+              <br />Email: info&#64;brancize.com
+            </p>
+          </li>
+        </ol>
+      </div>
+      <!--footer-->
+      <div
+        class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b"
+      >
+        <button
+          class="text-green-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          (click)="toggleModalprivacy()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

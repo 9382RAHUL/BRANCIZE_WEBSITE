@@ -1,0 +1,17 @@
+.active {
+  border-bottom: 2px solid rgb(0, 140, 16); /* Add an underline style */
+}
+
+.fa-phone {
+  transform: scaleX(-1);
+}
+
+.activeMob {
+  //    text-decoration: underline 2px solid rgb(0, 140, 16); /* Add an underline style */
+  border-left: 2px solid rgb(0, 140, 16); /* Add an underline style */
+  padding-left: 5px;
+}
+
+// .group:hover .group-hover\:block {
+//   display: block;
+// }
